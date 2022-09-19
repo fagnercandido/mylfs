@@ -15,10 +15,9 @@ if [ -h /usr/bin/yacc ]; then
 elif [ -x /usr/bin/yacc ]; then
   echo yacc is `/usr/bin/yacc --version | head -n1`
 else
-  echo "yacc not found" 
+  echo "yacc not found"
 fi
 
-bzip2 --version 2>&1 < /dev/null | head -n1 | cut -d" " -f1,6-
 echo -n "Coreutils: "; chown --version | head -n1 | cut -d")" -f2
 diff --version | head -n1
 find --version | head -n1
@@ -28,13 +27,12 @@ if [ -h /usr/bin/awk ]; then
   echo "/usr/bin/awk -> `readlink -f /usr/bin/awk`";
 elif [ -x /usr/bin/awk ]; then
   echo awk is `/usr/bin/awk --version | head -n1`
-else 
-  echo "awk not found" 
+else
+  echo "awk not found"
 fi
 
 gcc --version | head -n1
 g++ --version | head -n1
-ldd --version | head -n1 | cut -d" " -f2-  # glibc version
 grep --version | head -n1
 gzip --version | head -n1
 cat /proc/version
